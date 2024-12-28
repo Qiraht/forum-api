@@ -8,6 +8,7 @@ class AddThread {
     this.body = body;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _verifyPayload(payload) {
     const { title, body } = payload;
 

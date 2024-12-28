@@ -3,7 +3,7 @@ class DeleteReplyUseCase {
     this._replyRepository = replyRepository;
   }
 
-  async execute(threadId, commentId, replyId, ownerId){
+  async execute(threadId, commentId, replyId, ownerId) {
     await this._replyRepository.checkAvailableReply(replyId);
 
     await this._replyRepository.verifyReplyOwner(replyId, ownerId);

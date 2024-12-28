@@ -1,7 +1,6 @@
 const ReplyRepository = require('../../../Domains/replies/ReplyRepository');
 const DeleteReplyUseCase = require('../DeleteReplyUseCase');
 
-
 describe('DeleteReplyUseCase', () => {
   it('should orchestrating the delete reply use case correctly', async () => {
     // Arrange

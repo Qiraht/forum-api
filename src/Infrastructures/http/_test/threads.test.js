@@ -25,7 +25,6 @@ describe('/threads endpoint', () => {
         body: 'ini payload test body',
       };
 
-
       const accessToken = await ServerTestHelper.getAccessToken();
       const server = await createServer(container);
 
@@ -47,7 +46,6 @@ describe('/threads endpoint', () => {
     });
 
     it('should response 200 and persisted detail threads', async () => {
-
       const accessToken = await ServerTestHelper.getAccessToken();
       const server = await createServer(container);
 

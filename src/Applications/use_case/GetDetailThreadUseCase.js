@@ -14,7 +14,9 @@ class GetDetailThreadUseCase {
   }
 
   async execute(threadId) {
-    const { id, title, body, date, username } = await this._threadRepository.getThreadById(threadId);
+    const {
+      id, title, body, date, username,
+    } = await this._threadRepository.getThreadById(threadId);
 
     const thread = new DetailThread({
       id,
