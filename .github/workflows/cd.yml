@@ -18,6 +18,15 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
+          export PATH="/run/user/1000/fnm_multishells/7032_1735568022798/bin":"$PATH"
+          export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/7032_1735568022798"
+          export FNM_VERSION_FILE_STRATEGY="local"
+          export FNM_DIR="/home/ubuntu/.local/share/fnm"
+          export FNM_LOGLEVEL="info"
+          export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+          export FNM_COREPACK_ENABLED="false"
+          export FNM_RESOLVE_ENGINES="true"
+          export FNM_ARCH="x64"
           cd ~/forum-api
           git pull origin main
           npm install
