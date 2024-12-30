@@ -1,0 +1,34 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Connecting via SSH and deploy to the target instance
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          export PATH="/run/user/1000/fnm_multishells/13230_1735578334608/bin":"$PATH"
+          export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/13230_1735578334608"
+          export FNM_VERSION_FILE_STRATEGY="local"
+          export FNM_DIR="/home/ubuntu/.local/share/fnm"
+          export FNM_LOGLEVEL="info"
+          export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+          export FNM_COREPACK_ENABLED="false"
+          export FNM_RESOLVE_ENGINES="true"
+          export FNM_ARCH="x64"
+          cd ~/forum-api
+          git pull origin main
+          npm install
+          npm run migrate up
+          npx pm2 restart forum-api
