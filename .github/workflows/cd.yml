@@ -18,8 +18,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          export PATH="/run/user/1000/fnm_multishells/7032_1735568022798/bin":"$PATH"
-          export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/7032_1735568022798"
+          export PATH="/run/user/1000/fnm_multishells/13230_1735578334608/bin":"$PATH"
+          export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/13230_1735578334608"
           export FNM_VERSION_FILE_STRATEGY="local"
           export FNM_DIR="/home/ubuntu/.local/share/fnm"
           export FNM_LOGLEVEL="info"
