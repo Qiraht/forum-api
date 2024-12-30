@@ -77,7 +77,7 @@ describe('GetDetailThreadUseCase', () => {
     const getDetailThreadUseCase = new GetDetailThreadUseCase({
       threadRepository: mockThreadRepository,
       commentRepository: mockCommentRepository,
-      replyRepository: replyRepository,
+      replyRepository,
     });
 
     // Action
@@ -154,7 +154,7 @@ describe('GetDetailThreadUseCase', () => {
           username: 'angelina',
         }),
       ],
-    }),);
+    }));
 
     expect(detailThread.comments[1]).toStrictEqual(new DetailComment({
       content: '**komentar telah dihapus**',
@@ -163,7 +163,7 @@ describe('GetDetailThreadUseCase', () => {
       username: 'george',
       isDelete: true,
       replies: [],
-    }),);
+    }));
 
     expect(detailThread.comments[0].replies).toHaveLength(2);
 
@@ -237,7 +237,7 @@ describe('GetDetailThreadUseCase', () => {
       body: 'test-content',
       date: 'test-date-thread',
       username: 'george',
-      comments: []
+      comments: [],
     }));
 
     expect(detailThread.comments).toHaveLength(0);

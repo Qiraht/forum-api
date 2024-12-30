@@ -69,7 +69,7 @@ describe('ThreadRepositoryPostgres', () => {
       await ThreadsTableTestHelper.addThread({
         title: 'test-title',
         body: 'test-content',
-        owner
+        owner,
       });
 
       const threadRepositoryPostgres = new ThreadRepositoryPostgres(pool, {});
@@ -94,7 +94,7 @@ describe('ThreadRepositoryPostgres', () => {
       await ThreadsTableTestHelper.addThread({
         title: 'Thread title',
         body: 'Content of a thread',
-        owner: owner,
+        owner,
       });
 
       const threadRepositoryPostgres = new ThreadRepositoryPostgres(pool, {});
