@@ -98,7 +98,7 @@ container.register([
         },
         {
           concrete: nanoid,
-        }
+        },
       ],
     },
   },
@@ -112,9 +112,9 @@ container.register([
         },
         {
           concrete: nanoid,
-        }
+        },
       ],
-    }
+    },
   },
   {
     key: ReplyRepository.name,
@@ -126,10 +126,10 @@ container.register([
         },
         {
           concrete: nanoid,
-        }
+        },
       ],
-    }
-  }
+    },
+  },
 ]);
 
 // registering use cases
@@ -214,7 +214,7 @@ container.register([
       dependencies: [
         {
           name: 'threadRepository',
-          internal: ThreadRepository.name
+          internal: ThreadRepository.name,
         },
       ],
     },
@@ -227,7 +227,7 @@ container.register([
       dependencies: [
         {
           name: 'threadRepository',
-          internal: ThreadRepository.name
+          internal: ThreadRepository.name,
         },
         {
           name: 'commentRepository',

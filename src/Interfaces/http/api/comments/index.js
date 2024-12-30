@@ -6,5 +6,5 @@ module.exports = {
   register: async (server, { container }) => {
     const commentHandler = new CommentHandler(container);
     server.route(routes(commentHandler));
-  }
+  },
 };

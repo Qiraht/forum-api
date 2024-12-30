@@ -5,7 +5,6 @@ const CommentRepository = require('../../../Domains/comments/CommentRepository')
 const AddReplyUseCase = require('../AddReplyUseCase');
 const ReplyRepository = require('../../../Domains/replies/ReplyRepository');
 
-
 describe('AddReplyUseCase', () => {
   it('should orchestrating the add reply action correctly', async () => {
     // Arrange

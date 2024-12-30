@@ -28,7 +28,6 @@ describe('/threads endpoint', () => {
       const threadId = 'thread-123';
       const commentId = 'comment-123';
 
-
       const accessToken = await ServerTestHelper.getAccessToken();
       await ThreadsTableTestHelper.addThread({ id: 'thread-123' });
       await CommentsTableTestHelper.addComment({ id: 'comment-123' });

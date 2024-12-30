@@ -14,7 +14,10 @@ class DetailThread {
     this.comments = comments;
   }
 
-  _verifyPayload({ id, title, body, date, username, comments }) {
+  // eslint-disable-next-line class-methods-use-this
+  _verifyPayload({
+    id, title, body, date, username, comments,
+  }) {
     if (!id || !title || !body || !date || !username || !comments) {
       throw new Error('DETAIL_THREAD.NOT_CONTAIN_NEEDED_PROPERTY');
     }
