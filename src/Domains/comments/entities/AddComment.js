@@ -7,6 +7,7 @@ class AddComment {
     this.content = content;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _verifyPayload(payload) {
     const { content } = payload;
 

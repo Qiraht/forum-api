@@ -9,6 +9,7 @@ class AddedComment {
     this.owner = owner;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _verifyPayload(payload) {
     const { id, content, owner } = payload;
 

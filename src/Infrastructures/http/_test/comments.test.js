@@ -25,7 +25,6 @@ describe('/threads endpoint', () => {
       };
       const threadId = 'thread-123';
 
-
       const accessToken = await ServerTestHelper.getAccessToken();
       await ThreadsTableTestHelper.addThread({ id: 'thread-123' });
       const server = await createServer(container);

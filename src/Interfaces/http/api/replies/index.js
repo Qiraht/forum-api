@@ -7,5 +7,5 @@ module.exports = {
     const replyHandler = new ReplyHandler(container);
 
     server.route(routes(replyHandler));
-  }
+  },
 };

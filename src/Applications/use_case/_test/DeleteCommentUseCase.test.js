@@ -5,15 +5,15 @@ describe('DeleteCommentUseCase', () => {
   it('should orchestrating the delete comment action correctly', async () => {
     // Arrange
     const mockUser = {
-      id: 'test-user-1'
+      id: 'test-user-1',
     };
 
     const mockThread = {
-      id: 'test-thread-1'
+      id: 'test-thread-1',
     };
 
     const mockComment = {
-      id: 'test-comment-1'
+      id: 'test-comment-1',
     };
 
     const mockCommentRepository = new CommentRepository();
@@ -28,7 +28,7 @@ describe('DeleteCommentUseCase', () => {
       .fn(() => Promise.resolve());
 
     const deleteCommentUseCase = new DeleteCommentUseCase({
-      commentRepository: mockCommentRepository
+      commentRepository: mockCommentRepository,
     });
 
     // Action
@@ -39,10 +39,11 @@ describe('DeleteCommentUseCase', () => {
     );
 
     // Assert
-    expect(mockCommentRepository.checkAvailableComment).toHaveBeenCalledWith(mockComment.id);
-
-    expect(mockCommentRepository.verifyCommentOwner).toHaveBeenCalledWith(mockComment.id, mockUser.id);
-
-    expect(mockCommentRepository.deleteCommentById).toHaveBeenCalledWith(mockThread.id, mockComment.id);
+    expect(mockCommentRepository.checkAvailableComment)
+      .toHaveBeenCalledWith(mockComment.id);
+    expect(mockCommentRepository.verifyCommentOwner)
+      .toHaveBeenCalledWith(mockComment.id, mockUser.id);
+    expect(mockCommentRepository.deleteCommentById)
+      .toHaveBeenCalledWith(mockThread.id, mockComment.id);
   });
 });
